@@ -6,8 +6,18 @@ $(document).ready(function(){
 
 		function success(data){
 			console.log("what do we got?!"+JSON.stringify(data));
+			// var _data=JSON.parse(data);
+			getAlbums(data);
 		}
-
+		function getAlbums(data){
+			//returns all albums from an existing user, this is an open method, doesn't need a token btw
+			$.get({
+				url: "https://api.vk.com/method/photos.getAlbums?owner_id="+data.user_id,
+				success: function(res){
+					console.log(JSON.stringify(res));
+				},
+			});
+		}
 		if(_location.indexOf("error")!=-1){
 			console.log("there is an error!");
 			alert(_location.split("error=")[1]);
@@ -16,7 +26,7 @@ $(document).ready(function(){
 			console.log(_location.split("code=")[1]);
 			var code=_location.split("code=")[1];
 
-			var url="https://oauth.vk.com/access_token?client_id="+client_id+"&client_secret="+secret+"&redirect_uri="+callback+"&code="+code+"&callback=callbackFunc";
+			var url="https://oauth.vk.com/access_token?client_id="+client_id+"&client_secret="+secret+"&redirect_uri="+callback+"&code="+code;
 			//ok, this one is just leading us to a page, AND THIS IS ACTUALLY WORKING, cause we are able to get token! but, it's just inserting it to a body, leaving us no chance to handle the data.
 			// window.location.href = url;
 

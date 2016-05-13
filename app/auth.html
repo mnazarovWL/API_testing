@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Code</title>
+	<link rel="stylesheet" type="text/css" href="">
+	<link rel="stylesheet" href="styles/auth.css">
+</head>
+<body>
+    <div class="container">
+        <ul class=" methods nav nav-pills pull-right">
+        	<li class="active" onClick="methodClick('albums')"><a href="#">Get albums</a></li>
+        	<li class="active" onClick="methodClick('photos')"><a href="#">Get photos</a></li>
+        	<li class="active" onClick="methodClick('about')"><a href="#">Get more info</a></li>
+        	<li class="active" onClick="methodClick('wall')"><a href="#">Get posts</a></li>
+        	<li class="active" onClick="methodClick('friends')"><a href="#">Get friends</a></li>
+        	<li class="active" onClick="methodClick('notes')"><a href="#">Get notes</a></li>
+        </ul>
+	</div>
+	<script src="/bower_components/jquery/dist/jquery.js"></script>
+	<script src="/bower_components/JavaScript-MD5/js/md5.min.js"></script>
+	<script src="scripts/auth.js"></script>
+	<script src="scripts/lib/serviceManager.js"></script>
+</body>
+</html>
